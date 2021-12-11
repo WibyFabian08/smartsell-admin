@@ -68,5 +68,5 @@ export const updateAdmin = (id, data) => async (dispatch) => {
 export const logout = () => {
     localStorage.clear();
 
-    window.location.href = 'http://localhost:3000/'
+    window.location.href = 'https://smart-sell-web-iota.vercel.app/'
 }
