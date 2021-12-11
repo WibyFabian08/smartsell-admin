@@ -8,10 +8,14 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { useDispatch } from "react-redux";
+import { getAdmin } from "../redux/action/adminAction";
 
 const AdminLayout = ({ children, match }) => {
   const [left, setLeft] = useState(800);
   const [toggleMenu, setTogglemenu] = useState(false);
+  const dispatch = useDispatch()
+
 
   const updateWidth = () => {
     setLeft(window.innerWidth);
@@ -35,6 +39,10 @@ const AdminLayout = ({ children, match }) => {
       window.removeEventListener("resize", updateWidth);
     };
   }, []);
+
+  useEffect(() => {
+    dispatch(getAdmin())
+  }, [])
 
   const LEFT = left < 770 && !toggleMenu ? -300 : 0;
 

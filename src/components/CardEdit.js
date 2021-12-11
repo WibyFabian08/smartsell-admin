@@ -56,7 +56,7 @@ const CardEdit = ({
               <img
                 src={
                   user.profilePict &&
-                  `http://localhost:5000/${user.profilePict}`
+                  `https://smartsell-backend.herokuapp.com//${user.profilePict}`
                 }
                 className="object-cover w-full rounded-lg"
                 alt="profile"
@@ -159,7 +159,7 @@ const CardEdit = ({
               src={
                 previewImage
                   ? URL.createObjectURL(previewImage)
-                  : `http://localhost:5000/${companyForm.companyPict}`
+                  : `https://smartsell-backend.herokuapp.com/${companyForm.companyPict}`
               }
               className="object-cover w-full rounded-lg"
               alt="profile"

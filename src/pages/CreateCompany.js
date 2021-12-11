@@ -143,7 +143,7 @@ const CreateCompany = () => {
       </form>
       {companyForm && (
         <img
-          style={{display: companyForm.companyPict ? 'block' : 'none'}}
+          style={{display: companyForm?.companyPict ? 'block' : 'none'}}
           src={
             companyForm.companyPict !== null
               ? URL.createObjectURL(companyForm.companyPict)

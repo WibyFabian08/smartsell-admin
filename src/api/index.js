@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:5000/api" });
+const API = axios.create({ baseURL: "https://smartsell-backend.herokuapp.com/api" });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("user")) {
@@ -32,4 +32,7 @@ export const createEmploye = (companyId, data) =>
   API.post(`/employe/${companyId}/create`, data);
 export const updateEmploye = (id, data) =>
   API.put(`employe/${id}/edit`, data);
-export const deleteEmploye = (id) => API.delete(`employe/${id}/delete`);
+export const deleteEmploye = (id) => API.delete(`/employe/${id}/delete`);
+
+export const getAdmin = (id) => API.get(`/user/${id}`)
+export const updateAdmin = (id, data) => API.put(`/user/${id}/edit`, data)

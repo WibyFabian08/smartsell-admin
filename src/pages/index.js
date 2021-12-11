@@ -6,6 +6,7 @@ import CreateCompany from "./CreateCompany";
 import Company from "./Company";
 import ListCompanyEmploye from "./ListCompanyEmploye";
 import CreateEmploye from "./CreateEmploye";
+import Profile from './Profile'
 
 export {
   Home,
@@ -15,5 +16,6 @@ export {
   CreateCompany,
   Company,
   ListCompanyEmploye,
-  CreateEmploye
+  CreateEmploye,
+  Profile
 };

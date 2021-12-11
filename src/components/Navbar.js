@@ -1,10 +1,23 @@
-import React from "react";
-
-import SettingsIcon from "@mui/icons-material/Settings";
-import LanguageIcon from "@mui/icons-material/Language";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { logout } from "../redux/action/adminAction";
 
 const Navbar = () => {
+  const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
+  const { adminDetail } = useSelector((state) => state.adminState);
+
+  console.log(adminDetail);
+
+  const handleLogout = () => {
+    dispatch(logout);
+  };
+
+  const handleClick = () => {
+    setShow(!show);
+  };
+
   return (
     <div className="w-full bg-white shadow-xl">
       <div className="flex items-center justify-between px-5 py-5">
@@ -14,41 +27,47 @@ const Navbar = () => {
             SmartAdmin
           </h2>
         </div>
-        <div className="flex items-center">
-          <div className="relative mx-1">
-            <div
-              className="absolute top-0 right-0 text-xs text-center text-white bg-red-600 rounded-full"
-              style={{ width: 15, height: 15 }}
-            >
-              2
-            </div>
-            <NotificationsNoneOutlinedIcon
-              style={{ color: "#555555" }}
-            ></NotificationsNoneOutlinedIcon>
-          </div>
-          <div className="relative mx-1">
-            <div
-              className="absolute top-0 right-0 text-xs text-center text-white bg-red-600 rounded-full"
-              style={{ width: 15, height: 15 }}
-            >
-              2
-            </div>
-            <LanguageIcon style={{ color: "#555555" }}></LanguageIcon>
-          </div>
-          <div className="relative mx-1">
-            <SettingsIcon style={{ color: "#555555" }}></SettingsIcon>
-          </div>
+        <div
+          className="relative flex items-center"
+          style={{ cursor: "pointer" }}
+          onClick={() => handleClick()}
+        >
+          <p className="mr-2 capitalize">{adminDetail && adminDetail.username}</p>
           <div
             className="mx-1 overflow-hidden bg-white rounded-full"
             style={{ height: 40, width: 40 }}
           >
             <img
-              src="/images/profile.jpg"
+              src={
+                adminDetail
+                  ? `https://smartsell-backend.herokuapp.com/${adminDetail.profilePict}`
+                  : "/images/profile.png"
+              }
               className="object-cover w-full h-full"
               alt="profile"
             />
           </div>
         </div>
+        {show && (
+          <div className="absolute bg-white border border-gray-200 rounded-md shadow-lg top-16 right-10">
+            <div className="flex flex-col flex-start">
+              <div></div>
+              <Link
+                to="/profile"
+                className="py-2 transition-all duration-200 px-7 hover:bg-gray-300"
+              >
+                Profile
+              </Link>
+              <div
+                onClick={() => handleLogout()}
+                style={{ cursor: "pointer" }}
+                className="py-2 transition-all duration-200 px-7 hover:bg-gray-300"
+              >
+                Sign Out
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

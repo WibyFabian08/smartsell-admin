@@ -23,7 +23,7 @@ const TableCompany = ({ handleDelete }) => {
               style={{ width: 30, height: 30 }}
             >
               <img
-                src={`http://localhost:5000/${params.row.companyPict}`}
+                src={`https://smartsell-backend.herokuapp.com/${params.row.companyPict}`}
                 alt="avatar"
                 className="object-cover w-full h-full"
               />

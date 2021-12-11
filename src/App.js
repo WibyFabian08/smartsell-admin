@@ -11,7 +11,8 @@ import {
   CreateCompany,
   Company,
   ListCompanyEmploye,
-  CreateEmploye
+  CreateEmploye,
+  Profile
 } from "./pages";
 
 import store from "./redux/store";
@@ -28,6 +29,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route exact path="/users" component={ListUser}></Route>
+          <Route exact path="/profile" component={Profile}></Route>
           <Route exact path="/users/detail/:id" component={User}></Route>
           <Route exact path="/company" component={ListCompany}></Route>
           <Route

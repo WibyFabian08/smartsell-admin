@@ -50,6 +50,7 @@ const Company = ({ match }) => {
 
     return () => {
       dispatch({ type: "SET_COMPANY", value: null });
+      dispatch({ type: "SET_COMPANY_FORM_CLEAR", value: null });
     };
   }, [dispatch, match.params.id]);
 
