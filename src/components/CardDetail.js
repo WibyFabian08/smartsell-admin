@@ -36,7 +36,7 @@ const CardDetail = ({ userDetail, companyDetail, statistik }) => {
             style={{ width: 40, height: 40 }}
           >
             <img
-              src={user ? `https://smartsell-backend.herokuapp.com/images/${user.profilePict}` : ""}
+              src={user ? `https://smartsell-backend.herokuapp.com/${user.profilePict}` : ""}
               alt="profile"
               className="object-cover w-full h-full"
             />
