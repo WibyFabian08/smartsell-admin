@@ -38,11 +38,11 @@ const AdminLayout = ({ children, match }) => {
     return () => {
       window.removeEventListener("resize", updateWidth);
     };
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getAdmin())
-  }, [])
+  }, [dispatch])
 
   const LEFT = left < 770 && !toggleMenu ? -300 : 0;
 
