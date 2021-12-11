@@ -40,7 +40,7 @@ const Profile = () => {
 
   useEffect(() => {
     dispatch(getAdmin())
-  }, [])
+  }, [dispatch])
 
   return (
     <AdminLayout>
