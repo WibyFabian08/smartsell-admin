@@ -56,7 +56,7 @@ const CardEdit = ({
               <img
                 src={
                   user.profilePict &&
-                  `https://smartsell-backend.herokuapp.com/${user.profilePict}`
+                  `https://smartsell-backend.herokuapp.com/images/${user.profilePict}`
                 }
                 className="object-cover w-full rounded-lg"
                 alt="profile"

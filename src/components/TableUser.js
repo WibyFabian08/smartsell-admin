@@ -22,7 +22,7 @@ const TableUser = ({ handleDelete }) => {
               style={{ width: 30, height: 30 }}
             >
               <img
-                src={`https://smartsell-backend.herokuapp.com/${params.row.profilePict}`}
+                src={`https://smartsell-backend.herokuapp.com/images/${params.row.profilePict}`}
                 alt="avatar"
                 className="object-cover w-full h-full"
               />
